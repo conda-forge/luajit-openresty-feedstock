@@ -12,16 +12,16 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - make
+    - make  # [unix]
 
 test:
   commands:
-    - test -f $PREFIX/lib/libluajit${SHLIB_EXT}
+    - test -f $PREFIX/lib/libluajit${SHLIB_EXT}  # [unix]
+    - luajit -e "print('hello world')"
 
 about:
   home: https://github.com/openresty/luajit2
