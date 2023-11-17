@@ -1,5 +1,5 @@
 {% set name = "luajit-openresty" %}
-{% set version = "2.1-20231021" %}
+{% set version = "2.1-20231117" %}
 {% set version_under = version.replace("-", "_") %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/openresty/luajit2/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2e7179885d167dffd894a458fdea23f8aba7f199ddabd7928bfa19427091e3d5
+  sha256: cc92968c57c00303eb9eaebf65cc8b29a0f851670f16bb514896ab5057ae381f
 
 build:
   number: 0
