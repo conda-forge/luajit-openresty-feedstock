@@ -1,10 +1,9 @@
 context:
-  name: luajit-openresty
   version: 2.1-20241113
-  version_under: ${{"version | replace("-", "_")"}}
+  version_under: ${{ version | replace("-", "_") }}
 
 package:
-  name: ${{ name|lower }}
+  name: luajit-openresty
   version: ${{ version_under }}
 
 source:
