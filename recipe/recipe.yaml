@@ -21,10 +21,19 @@ requirements:
       then: make
 
 tests:
+  - package_contents:
+      bin: 
+        - luajit
+      include: 
+        - luajit-2.1/lua.h
+        - luajit-2.1/luajit.h
+      lib: 
+        - if: win
+          then: lua51
+          else: luajit
   - script:
-      - if: unix
-        then: test -f $PREFIX/lib/libluajit${SHLIB_EXT}
-      - luajit -e "print('hello world')"
+      - luajit -v
+      - luajit -e "print(package.path)"
 
 about:
   license: MIT
@@ -36,3 +45,4 @@ about:
 extra:
   recipe-maintainers:
     - danielnachun
+    - baszalmstra
