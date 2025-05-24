@@ -1,9 +1,10 @@
 context:
+  name: luajit-openresty
   version: "2.1-20250117"
   version_under: ${{ version | replace("-", "_") }}
 
 package:
-  name: luajit-openresty
+  name: ${{ name }}
   version: ${{ version_under }}
 
 source:
@@ -19,6 +20,8 @@ requirements:
     - ${{ stdlib("c") }}
     - if: unix
       then: make
+  run_exports: 
+    - ${{ pin_subpackage(name) }}
 
 tests:
   - package_contents:
