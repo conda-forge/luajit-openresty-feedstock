@@ -12,7 +12,7 @@ source:
   sha256: 68ff3dc2cc97969f7385679da7c9ff96738aa9cc275fa6bab77316eb3340ea8e
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -22,6 +22,9 @@ requirements:
       then: make
   run_exports: 
     - ${{ pin_subpackage(name) }}
+  run_constraints: 
+    # Luajit should not be installed together with lua 5.1
+    - lua <5.1|>=5.2
 
 tests:
   - package_contents:
