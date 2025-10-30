@@ -1,6 +1,6 @@
 context:
   name: luajit-openresty
-  version: "2.1-20251022"
+  version: "2.1-20251030"
   version_under: ${{ version | replace("-", "_") }}
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/openresty/luajit2/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 14809c865d465124f213e6435fc38d4c9cea6c61e089eafd3863a8d57e4948f2
+  sha256: b9a6de5c2253e120f5146ea375e3ad4224e777e6942e578acdb93038078fd5ae
 
 build:
   number: 0
