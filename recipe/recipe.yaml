@@ -1,10 +1,9 @@
 context:
-  name: luajit-openresty
   version: "2.1-20251030"
   version_under: ${{ version | replace("-", "_") }}
 
 package:
-  name: ${{ name }}
+  name: luajit-openresty
   version: ${{ version_under }}
 
 source:
@@ -12,7 +11,7 @@ source:
   sha256: b9a6de5c2253e120f5146ea375e3ad4224e777e6942e578acdb93038078fd5ae
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -21,7 +20,7 @@ requirements:
     - if: unix
       then: make
   run_exports:
-    - ${{ pin_subpackage(name) }}
+    - ${{ pin_subpackage("luajit-openresty") }}
   run_constraints:
     # Luajit should not be installed together with lua 5.1
     - lua <5.1|>=5.2
